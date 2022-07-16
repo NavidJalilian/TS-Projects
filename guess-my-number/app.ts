@@ -11,6 +11,7 @@ const currentBox = document.querySelector(".currect-box") as HTMLElement;
 const chanceLeft = document.querySelector(".chance-counter") as HTMLElement;
 const highestScore = document.querySelector(".highest-score") as HTMLElement;
 const resetBtn = document.querySelector(".reset") as HTMLElement;
+const numbers = document.querySelectorAll("a")!;
 
 let randomNumber = Math.floor(Math.random() * 20) + 1;
 console.log(randomNumber);
@@ -18,7 +19,8 @@ let chances = 5;
 let takes = 0;
 
 chanceLeft.textContent = `${chances}`;
-form.addEventListener("submit", e => {
+
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
@@ -27,18 +29,31 @@ resetBtn.addEventListener("click", () => {
 });
 
 guessButton.addEventListener("click", () => {
+  if (
+    guessInput.value === "" ||
+    +guessInput.value > 20 ||
+    +guessInput.value <= 0
+  )
+    return;
   if (chances > 0) {
     const guess = parseInt(guessInput.value);
+
     game(guess);
     chances--;
     chanceLeft.textContent = `${chances}`;
   }
 
-  if (chances === 0) {
-    statusParagraph.classList.add("text-red-500");
-
+  if (chances === 0 && +guessInput.value !== randomNumber) {
+    resetBtn.focus();
+    statusPClassChange("text-red-700");
+    numbers.forEach((number) => {
+      +number.textContent! === randomNumber
+        ? number.classList.add("bg-green-300")
+        : "";
+    });
     statusParagraph.textContent = "You lost!";
-    currentBox.classList.remove("bg-red-200", "bg-yellow-200", "bg-green-500");
+    deletePrevClasses();
+
     currentBox.classList.add("bg-red-500");
     currentBox.classList.add("text-red-100");
     guessButton.disabled = true;
@@ -49,8 +64,16 @@ function game(guess: number) {
   currentBox.textContent = guess.toString();
   takes++;
   if (guess === randomNumber) {
+    numbers.forEach((number) => {
+      +number.textContent! === randomNumber
+        ? number.classList.add("bg-green-300")
+        : "";
+    });
+    statusPClassChange("text-green-500");
+
     statusParagraph.textContent = "You guessed correctly!";
-    currentBox.classList.remove("bg-red-200", "bg-yellow-200");
+    deletePrevClasses();
+
     currentBox.classList.add("bg-green-500");
     resetBtn.focus();
     guessButton.disabled = true;
@@ -59,10 +82,21 @@ function game(guess: number) {
       highestScore.textContent = `${takes}`;
     }
   } else if (guess > randomNumber) {
+    numbers.forEach((number) => {
+      +number.textContent! > guess ? number.classList.add("bg-gray-300") : "";
+    });
+
     statusParagraph.textContent = "You guessed high!";
+    deletePrevClasses();
+    statusPClassChange("text-red-700");
+
     currentBox.classList.add("bg-red-200");
   } else {
-    currentBox.classList.remove("bg-green-500", "bg-red-200");
+    numbers.forEach((number) => {
+      +number.textContent! < guess ? number.classList.add("bg-gray-300") : "";
+    });
+    deletePrevClasses();
+    statusPClassChange("text-yellow-600");
 
     statusParagraph.textContent = "You guessed low!";
     currentBox.classList.add("bg-yellow-200");
@@ -73,10 +107,45 @@ function resetGame() {
   randomNumber = Math.floor(Math.random() * 20) + 1;
   chances = 5;
   takes = 0;
+  guessInput.value = "";
   chanceLeft.textContent = `${chances}`;
+  guessInput.focus();
+  numbers.forEach((number) => {
+    number.classList.remove(
+      "bg-gray-300",
+      "bg-green-300",
+      "bg-red-300",
+      "bg-yellow-300"
+    );
+  });
+  statusPClassChange("text-green-700");
+
   statusParagraph.textContent = "Start Guessing...";
-  currentBox.classList.remove("bg-red-500", "bg-green-500", "bg-yellow-200");
+  deletePrevClasses();
+  currentBox.textContent = "?";
   currentBox.classList.add("bg-white");
   currentBox.classList.add("text-green-800");
   guessButton.disabled = false;
+}
+
+function deletePrevClasses() {
+  currentBox.classList.remove(
+    "bg-red-200",
+    "bg-red-500",
+
+    "bg-green-500",
+    "bg-yellow-200"
+  );
+}
+
+function statusPClassChange(className = "") {
+  statusParagraph.classList.remove(
+    "text-green-700",
+    "text-red-700",
+    "text-yellow-600"
+  );
+  if (className) {
+    statusParagraph.classList.remove("text-green-500");
+    statusParagraph.classList.add(className);
+  }
 }
