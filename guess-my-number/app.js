@@ -29,6 +29,7 @@ guessButton.addEventListener("click", function () {
     chanceLeft.textContent = "".concat(chances);
   }
   if (chances === 0) {
+    resetBtn.focus();
     statusPClassChange("text-red-700");
 
     statusParagraph.textContent = "You lost!";
@@ -74,6 +75,7 @@ function resetGame() {
   takes = 0;
   guessInput.value = "";
   chanceLeft.textContent = "".concat(chances);
+  guessInput.focus();
   statusPClassChange("text-green-700");
 
   statusParagraph.textContent = "Start Guessing...";
