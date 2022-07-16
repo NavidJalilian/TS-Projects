@@ -9,7 +9,6 @@ var highestScore = document.querySelector(".highest-score");
 var resetBtn = document.querySelector(".reset");
 var numbers = document.querySelectorAll("a");
 var randomNumber = Math.floor(Math.random() * 20) + 1;
-console.log(randomNumber);
 var chances = 5;
 var takes = 0;
 chanceLeft.textContent = "".concat(chances);
@@ -24,6 +23,8 @@ guessButton.addEventListener("click", function () {
         +guessInput.value > 20 ||
         +guessInput.value <= 0)
         return;
+        takes++;
+
     if (chances > 0) {
         var guess = parseInt(guessInput.value);
         game(guess);
@@ -45,6 +46,7 @@ guessButton.addEventListener("click", function () {
         guessButton.disabled = true;
     }
 });
+
 function game(guess) {
     currentBox.textContent = guess.toString();
     takes++;

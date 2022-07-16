@@ -14,9 +14,10 @@ const resetBtn = document.querySelector(".reset") as HTMLElement;
 const numbers = document.querySelectorAll("a")!;
 
 let randomNumber = Math.floor(Math.random() * 20) + 1;
-console.log(randomNumber);
 let chances = 5;
 let takes = 0;
+// saving takes on local storage
+localStorage.setItem("takes", takes.toString());
 
 chanceLeft.textContent = `${chances}`;
 
