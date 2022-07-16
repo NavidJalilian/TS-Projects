@@ -66,7 +66,7 @@ function game(guess) {
     }
     else if (guess > randomNumber) {
         numbers.forEach(function (number) {
-            +number.textContent > guess ? number.classList.add("bg-gray-300") : "";
+            +number.textContent >= guess ? number.classList.add("bg-gray-300") : "";
         });
         statusParagraph.textContent = "You guessed high!";
         deletePrevClasses();
@@ -75,7 +75,7 @@ function game(guess) {
     }
     else {
         numbers.forEach(function (number) {
-            +number.textContent < guess ? number.classList.add("bg-gray-300") : "";
+            +number.textContent <= guess ? number.classList.add("bg-gray-300") : "";
         });
         deletePrevClasses();
         statusPClassChange("text-yellow-600");

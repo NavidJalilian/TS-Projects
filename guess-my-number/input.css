@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* my style */
+.numbers-indicator > li {
+  margin: 0.1em;
+}
+a {
+  cursor: auto;
+}
