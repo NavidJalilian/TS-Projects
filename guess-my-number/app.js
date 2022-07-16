@@ -11,6 +11,8 @@ var numbers = document.querySelectorAll("a");
 var randomNumber = Math.floor(Math.random() * 20) + 1;
 var chances = 5;
 var takes = 0;
+// saving takes on local storage
+localStorage.setItem("takes", takes.toString());
 chanceLeft.textContent = "".concat(chances);
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -23,8 +25,6 @@ guessButton.addEventListener("click", function () {
         +guessInput.value > 20 ||
         +guessInput.value <= 0)
         return;
-        takes++;
-
     if (chances > 0) {
         var guess = parseInt(guessInput.value);
         game(guess);
@@ -46,7 +46,6 @@ guessButton.addEventListener("click", function () {
         guessButton.disabled = true;
     }
 });
-
 function game(guess) {
     currentBox.textContent = guess.toString();
     takes++;

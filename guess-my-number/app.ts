@@ -84,7 +84,7 @@ function game(guess: number) {
     }
   } else if (guess > randomNumber) {
     numbers.forEach((number) => {
-      +number.textContent! > guess ? number.classList.add("bg-gray-300") : "";
+      +number.textContent! >= guess ? number.classList.add("bg-gray-300") : "";
     });
 
     statusParagraph.textContent = "You guessed high!";
@@ -94,7 +94,7 @@ function game(guess: number) {
     currentBox.classList.add("bg-red-200");
   } else {
     numbers.forEach((number) => {
-      +number.textContent! < guess ? number.classList.add("bg-gray-300") : "";
+      +number.textContent! <= guess ? number.classList.add("bg-gray-300") : "";
     });
     deletePrevClasses();
     statusPClassChange("text-yellow-600");
