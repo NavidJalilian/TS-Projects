@@ -35,7 +35,6 @@ guessButton.addEventListener("click", () => {
   }
 
   if (chances === 0) {
-    resetBtn.focus();
     statusParagraph.classList.add("text-red-500");
 
     statusParagraph.textContent = "You lost!";
@@ -75,7 +74,7 @@ function resetGame() {
   chances = 5;
   takes = 0;
   chanceLeft.textContent = `${chances}`;
-  statusParagraph.textContent = "";
+  statusParagraph.textContent = "Start Guessing...";
   currentBox.classList.remove("bg-red-500", "bg-green-500", "bg-yellow-200");
   currentBox.classList.add("bg-white");
   currentBox.classList.add("text-green-800");
