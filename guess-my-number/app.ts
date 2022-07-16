@@ -60,10 +60,12 @@ function game(guess: number) {
       highestScore.textContent = `${takes}`;
     }
   } else if (guess > randomNumber) {
-    statusParagraph.textContent = "You guessed  high!";
+    statusParagraph.textContent = "You guessed high!";
     currentBox.classList.add("bg-red-200");
   } else {
-    statusParagraph.textContent = "You guessed  low!";
+    currentBox.classList.remove("bg-green-500", "bg-red-200");
+
+    statusParagraph.textContent = "You guessed low!";
     currentBox.classList.add("bg-yellow-200");
   }
 }
