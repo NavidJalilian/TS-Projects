@@ -22,6 +22,12 @@ resetBtn.addEventListener("click", function () {
 });
 
 guessButton.addEventListener("click", function () {
+  if (
+    guessInput.value === "" ||
+    guessInput.value > 20 ||
+    guessInput.value <= 0
+  )
+    return;
   if (chances > 0) {
     var guess = parseInt(guessInput.value);
     game(guess);
@@ -80,6 +86,7 @@ function resetGame() {
 
   statusParagraph.textContent = "Start Guessing...";
   deletePrevClasses();
+  currentBox.textContent = "?";
   currentBox.classList.add("bg-white");
   currentBox.classList.add("text-green-800");
   guessButton.disabled = false;
