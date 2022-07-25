@@ -1,12 +1,12 @@
-class Person {
-  constructor(readonly name: string, public age: number) {}
+abstract class Person {
+  constructor(private name: string, public age: number) {}
+  abstract changeName(name: string): void;
 }
-const me = new Person("navid", 4);
-console.log(me);
 class Student extends Person {
-  constructor( name: string, 
-    age: number, private grades: number) {
+  constructor(name: string, age: number, private grades: number) {
     super(name, age);
   }
+  changeName(name: string) {
+    console.log(name);
+  }
 }
-const st = new Student("ali", 3, 15);

@@ -5,12 +5,12 @@ class Person {
         this.age = age;
     }
 }
-const me = new Person("navid", 4);
-console.log(me);
-    class Student extends Person {
-        constructor(name, age, grades) {
-            super(name, age);
-            this.grades = grades;
-        }
+class Student extends Person {
+    constructor(name, age, grades) {
+        super(name, age);
+        this.grades = grades;
     }
-const st = new Student("ali", 3, 15);
+    changeName(name) {
+        console.log(name);
+    }
+}
