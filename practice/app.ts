@@ -1,12 +1,7 @@
-abstract class Person {
-  constructor(private name: string, public age: number) {}
-  abstract changeName(name: string): void;
+type Input = number | string;
+
+function generic<T extends Input>(value: Input): Input {
+  if (typeof value === "string") return value ;
+  else return value * 10;
 }
-class Student extends Person {
-  constructor(name: string, age: number, private grades: number) {
-    super(name, age);
-  }
-  changeName(name: string) {
-    console.log(name);
-  }
-}
+console.log(generic(5));

@@ -1,16 +1,8 @@
 "use strict";
-class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
+function generic(value) {
+    if (typeof value === "string")
+        return value;
+    else
+        return value * 10;
 }
-class Student extends Person {
-    constructor(name, age, grades) {
-        super(name, age);
-        this.grades = grades;
-    }
-    changeName(name) {
-        console.log(name);
-    }
-}
+console.log(generic(5));
