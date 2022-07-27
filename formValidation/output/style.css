@@ -7,3 +7,10 @@ input:not(:placeholder-shown) + label {
   color: black;
 }
 /* if placeholder  */
+input::placeholder {
+  transform: translateY(100%);
+}
+input:focus::placeholder {
+  transform: translateY(0);
+  transition: transform 0.2s ease-in-out;
+}

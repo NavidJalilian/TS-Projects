@@ -20,9 +20,11 @@
         <div class="relative max-w-lg w-full">
           <input
             placeholder=" "
+            minlength="3"
+            maxlength="70"
             type="text"
             name="name"
-            class="hover:shadow-sm w-full focus:text-blue-800 pl-4 valid:outline-green-400 invalid:outline-red-300 outline-hidden rounded active:shadow-sm focus:shadow-md outline-offset-1 p-1 top-0 right-0"
+            class="hover:shadow-sm w-full focus:text-blue-800 pl-4 valid:outline-green-400 invalid:outline-red-300 outline-hidden rounded-r-xl active:shadow-sm focus:shadow-md outline-offset-1 p-1 top-0 right-0"
             required
           />
           <label
@@ -35,10 +37,11 @@
         <div class="relative mt-7 md:m-0 max-w-lg w-full">
           <input
             required
+            minlength="10"
             placeholder=" "
             type="email"
             name="email"
-            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 focus:text-blue-800 pl-4 rounded active:shadow-sm focus:shadow-md outline-hidden p-1 top-0 right-0"
+            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 focus:text-blue-800 pl-4 rounded-r-xl active:shadow-sm focus:shadow-md outline-hidden p-1 top-0 right-0"
           />
           <label
             for="email "
@@ -49,24 +52,41 @@
         <div class="relative mt-7 md:m-0 max-w-lg w-full">
           <input
             required
+            minlength="10"
             placeholder=" "
-            type="number"
-            name="phone-number"
-            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 outline-hidden focus:text-blue-800 pl-4 rounded active:shadow-sm focus:shadow-md p-1 top-0 right-0"
+            type="url"
+            name="website"
+            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 focus:text-blue-800 pl-4 rounded-r-xl active:shadow-sm focus:shadow-md outline-hidden p-1 top-0 right-0"
           />
           <label
-            for="phone-number "
+            for="website "
             class="capitalize absolute pointer-events-none ease transition-all top-1 left-4"
-            >Phone number</label
+            >website</label
           >
         </div>
         <div class="relative mt-7 md:m-0 max-w-lg w-full">
           <input
             required
+            placeholder="222-333-4444"
+            type="tel"
+            name="phone-number"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 outline-hidden focus:text-blue-800 pl-4 rounded-r-xl active:shadow-sm focus:shadow-md p-1 top-0 right-0"
+          />
+          <label
+            for="phone-number "
+            class="capitalize absolute pointer-events-none ease transition-all top-1 left-4"
+            >Phone number <span class="text-gray-400"></span
+          ></label>
+        </div>
+        <div class="relative mt-7 md:m-0 max-w-lg w-full">
+          <input
+            required
             placeholder=" "
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
             type="password"
             name="password"
-            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 outline-hidden focus:text-blue-800 pl-4 rounded active:shadow-sm focus:shadow-md p-1 top-0 right-0"
+            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 outline-hidden focus:text-blue-800 pl-4 rounded-r-xl active:shadow-sm focus:shadow-md p-1 top-0 right-0"
           />
           <label
             for="password"
@@ -78,10 +98,10 @@
           <input
             required
             placeholder=" "
-            
             type="password"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
             name="confirm-password"
-            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 outline-hidden focus:text-blue-800 pl-4 rounded active:shadow-sm focus:shadow-md p-1 top-0 right-0"
+            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 outline-hidden focus:text-blue-800 pl-4 rounded-r-xl active:shadow-sm focus:shadow-md p-1 top-0 right-0"
           />
           <label
             for="confirm-password"
@@ -90,11 +110,16 @@
           >
         </div>
         <button
-          class="px-2 py-4 mt-2 block bg-blue-400 w-full font-bold uppercase text-sm text-center hover:translate-y-1 hover:shadow-lg outline-offset-2 outline-blue-400   hover:bg-blue-500 transition-transform ease-in duration-150 rounded-lg tracking-wider text-blue-50 rounder"
+          class="px-2 py-4 block mt-4 bg-blue-400 w-screen md:w-full md:rounded-r-xl font-bold uppercase text-sm text-center hover:translate-y-1 hover:shadow-lg outline-offset-2 outline-blue-400 hover:bg-blue-500 transition-transform ease-in duration-150 tracking-wider text-blue-50"
         >
           send
         </button>
       </form>
+      <div
+        class="status px-2 py-4 block mt-4 w-screen scale-0 font-bold uppercase text-sm bg-red-500 ransition-transform ease-in duration-150 tracking-wider text-white"
+      >
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, in!
+      </div>
     </section>
   </body>
 </html>
