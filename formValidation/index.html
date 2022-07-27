@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/output/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./output/style.css" />
+  </head>
+  <body class="">
+    <section
+      class="w-screen h-screen pt-4 text-center text-blue-900 bg-blue-50"
+    >
+      <h1 class="font-semibold capitalize mb-8 text-xl">form validation</h1>
+      <form
+        action=""
+        class="px-4 flex flex-col items-center justify-center max-w-2xl min-w-5 md:gap-6 mx-auto"
+      >
+        <div class="relative max-w-lg w-full">
+          <input
+            placeholder=" "
+            type="text"
+            name="name"
+            class="hover:shadow-sm w-full focus:text-blue-800 pl-4 valid:outline-green-400 invalid:outline-red-300 outline-hidden rounded active:shadow-sm focus:shadow-md outline-offset-1 p-1 top-0 right-0"
+            required
+          />
+          <label
+            for="name "
+            class="capitalize absolute pointer-events-none ease transition-all top-1 left-4"
+            >name</label
+          >
+        </div>
+
+        <div class="relative mt-7 md:m-0 max-w-lg w-full">
+          <input
+            required
+            placeholder=" "
+            type="email"
+            name="email"
+            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 focus:text-blue-800 pl-4 rounded active:shadow-sm focus:shadow-md outline-hidden p-1 top-0 right-0"
+          />
+          <label
+            for="email "
+            class="capitalize absolute pointer-events-none ease transition-all top-1 left-4"
+            >email</label
+          >
+        </div>
+        <div class="relative mt-7 md:m-0 max-w-lg w-full">
+          <input
+            required
+            placeholder=" "
+            type="number"
+            name="phone-number"
+            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 outline-hidden focus:text-blue-800 pl-4 rounded active:shadow-sm focus:shadow-md p-1 top-0 right-0"
+          />
+          <label
+            for="phone-number "
+            class="capitalize absolute pointer-events-none ease transition-all top-1 left-4"
+            >Phone number</label
+          >
+        </div>
+        <div class="relative mt-7 md:m-0 max-w-lg w-full">
+          <input
+            required
+            placeholder=" "
+            type="password"
+            name="password"
+            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 outline-hidden focus:text-blue-800 pl-4 rounded active:shadow-sm focus:shadow-md p-1 top-0 right-0"
+          />
+          <label
+            for="password"
+            class="capitalize absolute pointer-events-none ease transition-all top-1 left-4"
+            >password</label
+          >
+        </div>
+        <div class="relative mt-7 md:m-0 max-w-lg w-full">
+          <input
+            required
+            placeholder=" "
+            
+            type="password"
+            name="confirm-password"
+            class="hover:shadow-sm w-full valid:outline-green-400 invalid:outline-red-300 outline-hidden focus:text-blue-800 pl-4 rounded active:shadow-sm focus:shadow-md p-1 top-0 right-0"
+          />
+          <label
+            for="confirm-password"
+            class="capitalize absolute pointer-events-none ease transition-all top-1 left-4"
+            >confirm password</label
+          >
+        </div>
+        <button
+          class="px-2 py-4 mt-2 block bg-blue-400 w-full font-bold uppercase text-sm text-center hover:translate-y-1 hover:shadow-lg outline-offset-2 outline-blue-400   hover:bg-blue-500 transition-transform ease-in duration-150 rounded-lg tracking-wider text-blue-50 rounder"
+        >
+          send
+        </button>
+      </form>
+    </section>
+  </body>
+</html>
