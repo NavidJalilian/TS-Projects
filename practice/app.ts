@@ -1,7 +1,7 @@
-type Input = number | string;
-
-function generic<T extends Input>(value: Input): Input {
-  if (typeof value === "string") return value ;
-  else return value * 10;
+function arrayGeneric<T extends (string | number)[]>(arg: T): Array<T> {
+  if (arg.find((x) => x === "a")) {
+    return arg;
+  } else return [];
 }
-console.log(generic(5));
+
+arrayGeneric(["a", "b", "c"]);
