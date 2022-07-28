@@ -8,9 +8,12 @@ input:not(:placeholder-shown) + label {
 }
 /* if placeholder  */
 input::placeholder {
+  opacity: 0;
   transform: translateY(100%);
 }
 input:focus::placeholder {
   transform: translateY(0);
   transition: transform 0.2s ease-in-out;
+  opacity: 1;
+ 
 }
