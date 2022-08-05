@@ -1064,3 +1064,6 @@ a {
 .transition-bg {
   transition: background-color 0.2s ease-in-out;
 }
+.overflow-hidden {
+  overflow: hidden;
+}

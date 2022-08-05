@@ -50,11 +50,13 @@ guessButton.addEventListener("click", function () {
 });
 function game(guess) {
   currentBox.textContent = guess.toString();
+  gsap.fromTo(currentBox, { scale: 0 }, { scale: 1, duration: 0.2 });
+
   takes++;
   if (guess === randomNumber) {
     numbers.forEach(function (number) {
       +number.textContent === randomNumber
-        ? number.classList.add("bg-green-300","transition-bg")
+        ? number.classList.add("bg-green-300", "transition-bg")
         : "";
     });
     statusPClassChange("text-green-500");
@@ -68,7 +70,9 @@ function game(guess) {
     }
   } else if (guess > randomNumber) {
     numbers.forEach(function (number) {
-      +number.textContent >= guess ? number.classList.add("bg-gray-300","transition-bg") : "";
+      +number.textContent >= guess
+        ? number.classList.add("bg-gray-300", "transition-bg")
+        : "";
     });
     statusParagraph.textContent = "You guessed high!";
     deletePrevClasses();
@@ -76,7 +80,9 @@ function game(guess) {
     currentBox.classList.add("bg-red-200");
   } else {
     numbers.forEach(function (number) {
-      +number.textContent <= guess ? number.classList.add("bg-gray-300","transition-bg") : "";
+      +number.textContent <= guess
+        ? number.classList.add("bg-gray-300", "transition-bg")
+        : "";
     });
     deletePrevClasses();
     statusPClassChange("text-yellow-600");
