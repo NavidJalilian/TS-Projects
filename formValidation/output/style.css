@@ -17,3 +17,11 @@ input:focus::placeholder {
   opacity: 1;
  
 }
+.status {
+  transform: scale(0);
+ 
+}
+.scale-100{
+  transform: scale(1);
+   transition: transform 0.2s ease-in-out;
+}
