@@ -1061,3 +1061,6 @@ video {
 a {
   cursor: auto;
 }
+.transition-bg {
+  transition: background-color 0.2s ease-in-out;
+}
