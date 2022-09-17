@@ -12,6 +12,7 @@ var randomNumber = Math.floor(Math.random() * 20) + 1;
 var chances = 5;
 var takes = 0;
 // saving takes on local storage
+
 localStorage.setItem("takes", takes.toString());
 chanceLeft.textContent = "".concat(chances);
 form.addEventListener("submit", function (e) {
@@ -48,6 +49,7 @@ guessButton.addEventListener("click", function () {
     guessButton.disabled = true;
   }
 });
+
 function game(guess) {
   currentBox.textContent = guess.toString();
   gsap.fromTo(currentBox, { scale: 0 }, { scale: 1, duration: 0.2 });
@@ -90,6 +92,7 @@ function game(guess) {
     currentBox.classList.add("bg-yellow-200");
   }
 }
+
 function resetGame() {
   randomNumber = Math.floor(Math.random() * 20) + 1;
   chances = 5;
@@ -113,6 +116,7 @@ function resetGame() {
   currentBox.classList.add("text-green-800");
   guessButton.disabled = false;
 }
+
 function deletePrevClasses() {
   currentBox.classList.remove(
     "bg-red-200",
@@ -121,6 +125,7 @@ function deletePrevClasses() {
     "bg-yellow-200"
   );
 }
+
 function statusPClassChange(className) {
   if (className === void 0) {
     className = "";
