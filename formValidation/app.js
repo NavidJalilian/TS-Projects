@@ -19,11 +19,10 @@ form.addEventListener("submit", (e) => {
   statusDiv.classList.add("pending", "scale-100");
 });
 eyePassword.onclick = () => {
-  svgEye.classList.toggle("fill-gray-900");
+  svgEye.classList.toggle("bg-pink-200");
   if (passwordInput.type === "password") {
     passwordInput.type = "text";
   } else passwordInput.type = "password";
-  passwordInput.focus();
 };
 //password => text
 // text=>pass

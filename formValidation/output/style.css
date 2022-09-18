@@ -23,16 +23,31 @@ input:focus::placeholder {
   transform: scale(1);
   transition: transform 0.2s ease-in-out;
 }
+.pending {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
 
 .eye-container {
   content: "";
-  width: 20px;
+  width: 40px;
   border-radius: 50%;
-  height: 20px;
+  height: 40px;
   position: absolute;
   top: 50%;
   translate: -50% -50%;
-  left: 102%;
+  left: 95%;
   z-index: 10;
-  border: 5px solid #000;
+  cursor: pointer;
 }
+svg > ellipse {
+  fill: rgb(212, 208, 208);
+}
+svg > ellipse:nth-of-type(1) {
+  fill: rgb(241, 238, 231);
+}
+.animated{
+
+}
+anim
