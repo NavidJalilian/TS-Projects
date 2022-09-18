@@ -6,6 +6,7 @@ const eyePassword = document.querySelector(".eye-container");
 const passwordInput = form[4];
 const svgEye = document.querySelector(".cls-2");
 button.addEventListener("click", () => {
+  button.classList.add("active");
   for (const input of form) {
     if (input.validity.valid) continue;
     statusDiv.textContent = "Erorr: " + input.name + " is not Valid!";
@@ -20,10 +21,14 @@ form.addEventListener("submit", (e) => {
 });
 eyePassword.onclick = () => {
   svgEye.classList.toggle("fill-gray-900");
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-  } else passwordInput.type = "password";
+  passwordInput.type === "password"
+    ? (passwordInput.type = "text")
+    : (passwordInput.type = "password");
+
   passwordInput.focus();
 };
 //password => text
 // text=>pass
+// form[3].addEventListener("input", () => {
+//   if (form[3].value.length % 3 === 0) form[3].value = form[3].value + "-";
+// });

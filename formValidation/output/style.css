@@ -18,6 +18,7 @@ input:focus::placeholder {
 }
 .status {
   transform: scale(0);
+  transition: width 0.2s ease-in-out;
 }
 .scale-100 {
   transform: scale(1);
@@ -47,7 +48,3 @@ svg > ellipse {
 svg > ellipse:nth-of-type(1) {
   fill: rgb(241, 238, 231);
 }
-.animated{
-
-}
-anim
